@@ -1,4 +1,3 @@
-// DOM elements
 const resultEl = document.getElementById('result')
 const lengthEl = document.getElementById('length')
 const uppercaseEl = document.getElementById('uppercase')
@@ -40,16 +39,11 @@ generate.addEventListener('click', () => {
 });
 
 function generatePassword(lower, upper, number, symbol, length) {
-  // 1. Init pw var
-  // 2. filter out checked types
-  // 3. Loop over length call generator function for each type
-  // 4. Add final pw to the pw var and return
-
   let generatedPassword = '';
   const typesCount = lower + upper + number + symbol;
   const typesArr = [ { lower }, { upper }, { number }, { symbol } ].filter(item => Object.values(item)[ 0 ]);
 
-  // Doesn't have a selected type
+  // doesn't have a selected type
   if (typesCount === 0) {
     return '';
   }
